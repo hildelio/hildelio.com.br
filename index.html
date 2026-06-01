@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -92,7 +92,7 @@
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#process">Processo</a></li>
                 <li><a href="#cases">Cases</a></li>
-                <li><a href="#" onclick="openFaq(event)">Dúvidas Frequentes</a></li>
+                
             </ul>
 
             <a href="mailto:contato@hildelio.com.br" onclick="copyEmail(event, this)"
@@ -257,7 +257,7 @@
                             <circle cx="8" cy="20" r="3" />
                             <circle cx="32" cy="20" r="3" />
                         </svg>
-                    </span><h3 class="service-card__title">DevOps<br>& CI/CD</h3>
+                    </div><h3 class="service-card__title">DevOps<br>& CI/CD</h3>
                     <p class="service-card__desc">Automação de pipelines, integração e delivery contínuos para garantir
                         agilidade e segurança nos deploys.</p>
                 </div>
@@ -269,7 +269,7 @@
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M10 28h20a8 8 0 10-3-15.4A10 10 0 1010 28z" />
                         </svg>
-                    </span><h3 class="service-card__title">Infraestrutura<br>Cloud</h3>
+                    </div><h3 class="service-card__title">Infraestrutura<br>Cloud</h3>
                     <p class="service-card__desc">Arquitetura resiliente, provisionamento via IaC (Terraform) e
                         otimização de custos (FinOps) em nuvem.</p>
                 </div>
@@ -282,7 +282,7 @@
                             <path d="M14 12L6 20l8 8" />
                             <path d="M26 12l8 8-8 8" />
                         </svg>
-                    </span><h3 class="service-card__title">Desenvolvimento<br>Full Stack</h3>
+                    </div><h3 class="service-card__title">Desenvolvimento<br>Full Stack</h3>
                     <p class="service-card__desc">Aplicações corporativas escaláveis atuando com maestria desde o banco
                         de dados até a interface do usuário.</p>
                 </div>
@@ -295,7 +295,7 @@
                             <path d="M20 4L6 10v10c0 8.4 5.6 16.2 14 18 8.4-1.8 14-9.6 14-18V10L20 4z" />
                             <path d="M15 20l3.5 3.5L26 16" />
                         </svg>
-                    </span><h3 class="service-card__title">Segurança &<br>Monitoramento</h3>
+                    </div><h3 class="service-card__title">Segurança &<br>Monitoramento</h3>
                     <p class="service-card__desc">Políticas IAM (RBAC), análise de anomalias com IA e métricas de
                         visibilidade de ponta a ponta.</p>
                 </div>
@@ -308,7 +308,7 @@
                             <rect x="6" y="8" width="28" height="24" rx="2" />
                             <path d="M6 14h28M12 28v-8" />
                         </svg>
-                    </span><h3 class="service-card__title">Criação de<br>Sites</h3>
+                    </div><h3 class="service-card__title">Criação de<br>Sites</h3>
                     <p class="service-card__desc">Sites institucionais e landing pages de alta conversão para autônomos
                         e pequenos negócios.</p>
                 </div>
@@ -601,6 +601,9 @@
                         <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>
                 </a>
+                <div style="margin-top: 48px; text-align: center;">
+                    <a href="#" onclick="openFaq(event)" style="font-size: 11px; font-weight: 500; color: var(--text-secondary); opacity: 0.4; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.4'">Dúvidas Frequentes</a>
+                </div>
             </div>
         </div>
     </section>
@@ -639,3 +642,4 @@
 </body>
 
 </html>
+
