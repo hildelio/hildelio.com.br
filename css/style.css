@@ -1035,6 +1035,10 @@ img { display: block; max-width: 100%; }
     }
     .navbar__mobile { position: relative; z-index: 101; }
 
+    .hero { 
+        min-height: auto;
+        padding: 120px 0 80px; 
+    }
     .hero__bg { width: 100%; }
     .hero__bg::before {
         background: linear-gradient(to bottom,
