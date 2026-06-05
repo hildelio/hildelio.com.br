@@ -1008,6 +1008,7 @@ img { display: block; max-width: 100%; }
         align-items: flex-start;
     }
     .tech-strip__label { margin-right: 0; margin-bottom: 20px; }
+    .tech-strip__carousel { width: 100%; }
 
     .services__grid { grid-template-columns: 1fr; }
     .service-card {
