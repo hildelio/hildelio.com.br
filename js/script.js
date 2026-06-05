@@ -38,6 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
+    // ── Mobile Menu Toggle ──────────────────────────────────
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navbarLinks = document.querySelector('.navbar__links');
+    if (mobileToggle && navbarLinks) {
+        mobileToggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('navbar__links--open');
+        });
+        
+        // Close menu when clicking a link
+        navbarLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbarLinks.classList.remove('navbar__links--open');
+            });
+        });
+    }
+
+
     // ── Smooth Anchor Links ──────────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -85,6 +102,33 @@ document.addEventListener('DOMContentLoaded', () => {
             resetAutoplay();
         });
     });
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (slides) {
+        slides.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoplayTimer);
+        }, {passive: true});
+
+        slides.addEventListener('touchmove', e => {
+            touchEndX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        slides.addEventListener('touchend', e => {
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+                resetAutoplay();
+            } else if (touchEndX - touchStartX > 50) {
+                goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+                resetAutoplay();
+            } else {
+                resetAutoplay();
+            }
+        });
+    }
 
     if (totalSlides > 0) {
         startAutoplay();

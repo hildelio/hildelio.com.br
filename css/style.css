@@ -986,9 +986,54 @@ img { display: block; max-width: 100%; }
     }
 }
 
+/* ── Tablet Médio ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card:nth-child(3) {
+        border-right: 1px solid var(--border-subtle);
+    }
+
+    .service-card:nth-child(n+3) {
+        border-top: 1px solid var(--border-subtle);
+        border-right: none;
+        padding-top: 32px;
+    }
+
+    .process__nodes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
 /* ── Mobile ────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-    .container { padding: 0 24px; }
+    .container { padding: 0 20px; }
+
+    /* Padronização de Espaçamento Global */
+    .services, .process, .cases, .results, .final-cta { padding: 64px 0; }
+    .process::before { background-size: 100% auto; }
+
+    /* Menu Overlay Mobile */
+    .navbar__links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-900);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+    .navbar__links--open {
+        display: flex !important;
+    }
+    .navbar__mobile { position: relative; z-index: 101; }
 
     .hero__bg { width: 100%; }
     .hero__bg::before {
@@ -1015,8 +1060,8 @@ img { display: block; max-width: 100%; }
 
     .services__grid { grid-template-columns: 1fr; }
     .service-card {
-        padding: 32px 0;
-        border-right: none !important;
+        padding: 24px 0;
+        border-right: none;
         border-bottom: 1px solid var(--border-subtle);
     }
     .service-card:last-child { border-bottom: none; }
@@ -1024,13 +1069,18 @@ img { display: block; max-width: 100%; }
 
     .process__nodes {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 24px;
+        gap: 32px;
+        padding: 0 20px;
         margin-top: 40px;
     }
     .process__image-wrapper { display: none; }
 
     .projects__grid { grid-template-columns: 1fr; }
+
+    .results__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
 
     .results__metrics {
         grid-template-columns: 1fr;
@@ -1047,68 +1097,14 @@ img { display: block; max-width: 100%; }
     .final-cta__text { margin-left: 0; }
 }
 
-/* ── Tablet Médio ────────────────────────────────────────────────────── */
-@media (max-width: 900px) {
-    .services__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-card:nth-child(3) {
-        border-right: 1px solid var(--border-subtle);
-    }
-
-    .service-card:nth-child(n+3) {
-        border-top: 1px solid var(--border-subtle);
-        border-right: none;
-        padding-top: 32px;
-    }
-
-    .process__nodes {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
-}
-
-/* ── Tablet Pequeno (770px) ────────────────────────────────────────────────────── */
-@media (max-width: 770px) {
-    .container { padding: 0 20px; }
-    
-    .services__grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-card {
-        padding: 24px 0;
-        border-right: none !important;
-        border-bottom: 1px solid var(--border-subtle);
-    }
-    .service-card:last-child { border-bottom: none; }
-    .service-card:not(:first-child) { padding-left: 0 !important; }
-    
-    .process__nodes {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 0 20px;
-    }
-    
-    .projects__grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .results__grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    
-    .results__metrics {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-}
-
 /* ── Small Mobile ──────────────────────────────────────────────── */
 @media (max-width: 480px) {
     .hero__title { font-size: 36px; }
     .results__metrics { grid-template-columns: 1fr; }
     .metric { text-align: center; }
+    
+    .modal {
+        padding: 24px;
+        width: 95%;
+    }
 }
